@@ -13,32 +13,38 @@
     <div class="d-flex justify-content-between bg-dark text-light font-normal border-bottom pb-1">
         <i class="bi bi-list"></i> <p class="mb-0">New chat</p> <i class="bi bi-plus"></i>
     </div>
-    <div class="container d-flex flex-column justify-content-center bg-dark text-center">
-        <h1 class="font-semibold text-light mt-2 mb-4">ChatGPT</h1>
-        <div class="text-light font-normal">
-            <h2 class="text-light font-normal h6 mb-3"><i class="bi bi-brightness-high"></i> Example</h2>
-            <ul class="d-grid gap-2">
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">"Explain quantum computing in simple terms"→</button>
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">"Got any creative ideas for a 10 year old’s birthday?"→</button>
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">"How do I make an HTTP request in Javascript?"→</button>
-            </ul>
-        </div>
-        <div class="text-light font-normal">
-            <h2 class="text-light font-normal h6 mb-3"><i class="bi bi-lightning-charge"></i> Capabilities</h2>
-            <ul class="d-grid gap-2">
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">Remembers what user said earlier in the conversation</button>
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">Allows user to provide follow-up corrections</button>
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">Trained to decline inappropriate requests</button>
-            </ul>
-        </div>
-        <div class="text-light font-normal">
-            <h2 class="text-light font-normal h6 mb-3"><i class="bi bi-exclamation-triangle"></i> Limitation</h2>
-            <ul class="d-grid gap-2">
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">May occasionally generate incorrect information</button>
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">May occasionally produce harmful instructions or biased content</button>
-                <button class="p-2 rounded h6 btn btn-sm btn-secondary">Limited knowledge of world and events after 2021</button>
-            </ul>
-        </div>
+    <h1 class="font-semibold text-light mt-2 mb-4 text-center">ChatGPT</h1>
+
+    <div class="container bg-dark text-center"> 
+         <div class="row">                                      <!-- le responsive est influencé par row -->
+            <div class="text-light font-normal me-3 col-md">  <!-- le responsive est influencé par col-md -->
+                <h2 class="text-light font-normal h6 mb-3"><i class="bi bi-brightness-high"></i> Example</h2>
+                <ul class="d-grid gap-2 p-0">
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">"Explain quantum computing in simple terms"→</button>
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">"Got any creative ideas for a 10 year old’s birthday?"→</button>
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">"How do I make an HTTP request in Javascript?"→</button>
+                </ul>
+            </div>
+            
+            <div class="text-light font-normal me-3 col-md">   <!-- le responsive est influencé par col-md -->
+                <h2 class="text-light font-normal h6 mb-3"><i class="bi bi-lightning-charge"></i> Capabilities</h2>
+                <ul class="d-grid gap-2 p-0">
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">Remembers what user said earlier in the conversation</button>
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">Allows user to provide follow-up corrections</button>
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">Trained to decline inappropriate requests</button>
+                </ul>
+            </div>
+            
+            <div class="text-light font-normal me-3 col-md">   <!-- le responsive est influencé par col-md -->
+                <h2 class="text-light font-normal h6 mb-3"><i class="bi bi-exclamation-triangle"></i> Limitation</h2>
+                <ul class="d-grid gap-2 p-0">
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">May occasionally generate incorrect information</button>
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">May occasionally produce harmful instructions or biased content</button>
+                    <button class="p-2 rounded h6 btn btn-sm btn-secondary">Limited knowledge of world and events after 2021</button>
+                </ul>
+            </div>
+        </div>   
+        
     </div>
     <div class="absolute bottom-0 border-top w-full fixed-bottom">
         <div class="d-flex gap-3 align-items-center pt-2 mx-4 h4 ">
