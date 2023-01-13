@@ -1,0 +1,23 @@
+.message-me {
+    background-color: #343540;
+}
+
+.message-chatGpt {
+    background-color: #444654;
+}
+
+.chatGpt-icons {
+    width: 30px;
+    height: 30px;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 6.05s steps(40, end);
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
