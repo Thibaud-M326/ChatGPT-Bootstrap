@@ -11,7 +11,50 @@
 </head>
 <body>
 
+
+    <nav class="navbar navbar-expand-lg fixed-top d-md-none" style="background-color: #343541;">
+      <div class="container-fluid text-light" style="background-color: #343541;">
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <i class="bi bi-list text-light"></i>
+        </button>
+        <a class="navbar-brand text-light" href="#">NewChat</a>
+        <i class="bi bi-plus-lg text-light"></i>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header text-light" style="background-color: #202123;">
+            <!-- remplacer par le bouton new Chat debut-->
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <!-- fin remplacer par le bouton new Chat -->
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+
+          <div class="offcanvas-body" style="background-color: #202123;">
+               
+                <!-- Navbar Aude debut -->
+
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#">Link</a>
+              </li>
+            </ul>
+
+                <!-- Fin Navbar Aude -->
+
+          </div>
+
+
+
+        </div>
+      </div>
+    </nav>
+
     <div class="d-flex" style="height: 100vh;">
+
+
 
         <nav class="d-none bg-black d-md-flex flex-column justify-content-between" style="min-width: 260px;" id="nav">
             <button type="button" class="btn btn-outline-secondary text-white m-2"><i class="bi bi-plus-lg me-1"></i>New Chat</button>
@@ -22,6 +65,9 @@
                 <a class="text-white text-decoration-none ms-2 me-5 my-2"><i class="bi bi-box-arrow-right me-2"></i>Log out</a>
             </div>
         </nav>
+
+        
+
         <div class="container-md" id="font-container">
             <div class="row" id="main">
 
@@ -29,14 +75,22 @@
             
             <div class="col-md-12 col-lg-8">
                 <div class="d-flex flex-column justify-content-between" style="height: 100vh; width:100%;">
-                    <div class="header-xs d-flex justify-content-between bg-dark text-light font-normal border-bottom pb-1 d-md-none">
+
+
+
+                    <!-- <div class="header-xs d-flex justify-content-between bg-dark text-light font-normal border-bottom pb-1 d-md-none">
                         <i class="bi bi-list h2 pt-2"></i> <p class="my-1 h4 mt-2">New chat</p> <i class="bi bi-plus h2 pt-2"></i>
-                    </div>
+                    </div> -->
+
+
+
                     <h1 class="font-semibold text-light mt-3 mb-3 text-center p-md-4 mt-md-5">ChatGPT</h1>
 
+
+                    
                     <div class="container bg-dark text-center"> 
                         <div class="row" id="main2">                                     <!-- le responsive est influencé par row -->
-                            <div class="text-light font-normal me-3 col-md">  <!-- le responsive est influencé par col-md -->
+                            <div class="text-light font-normal me-3 col-md">             <!-- le responsive est influencé par col-md -->
                                 <h2 class="text-light font-normal h6 sm-3"><i class="bi bi-brightness-high"></i> Example</h2>
                                 <ul class="d-grid gap-2 p-0">
                                     <button class="p-2 rounded h6 btn btn-sm text-light">"Explain quantum computing in simple terms"→</button>
@@ -70,8 +124,8 @@
                             <div class="bg-primary p-1 rounded" id="user_icon">
                                 <i class="bi bi-person"></i>
                             </div>
-                            <textarea class="form-control form-control-sm fs-6 p-0" rows="1" style="resize: none;"> </textarea>
-                            <button class="bg-dark btn p-0"><i class="bi bi-arrow-right-square text-light"></i></button>
+                            <textarea class="form-control form-control-sm fs-6 p-0 border-0" rows="1" style="resize: none; background-color: #40414F";> </textarea>
+                            <button class="btn p-0"><i class="bi bi-arrow-right-square text-light"></i></button>
                         </div>
                         <div class="container text-secondary text-center word-wrap small h6 mx-3 pt-1 pb-2">
                             <a class="text-secondary text-center" href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank">ChatGPT Jan 9 Version</a>
