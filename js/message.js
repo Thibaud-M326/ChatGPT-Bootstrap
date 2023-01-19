@@ -1,7 +1,7 @@
-// const homeContent = document.querySelector("#home-content")
-// const divMessage = document.querySelector("#message")
-// const msgArea = document.querySelector("#message-area")
-// msgArea.value = ""
+const homeContent = document.querySelector("#home-content")
+const divMessage = document.querySelector("#message")
+const msgArea = document.querySelector("#message-area")
+msgArea.value = ""
 
 isGrout = false
 
@@ -93,7 +93,7 @@ const addChatGPTMessage = () => {
 }
 
 const addGroutMessage = () => {
-    let message = "I am grout "
+    let message = "I am groot "
     const iterationRandom = parseInt(Math.random() * 10)
     for (i = 0; i <= iterationRandom; i++){
         switch(parseInt((Math.random() * 10) / 2)) {
@@ -133,26 +133,26 @@ const animateMsg = (str) => {
 
 
 
-// document.querySelector("#message-button").addEventListener("click", () => {
+document.querySelector("#message-button").addEventListener("click", () => {
 
-//     console.log("patrik")
+    console.log("patrik")
 
-//     if (msgArea.value == "") {
-//         return
-//     }
+    if (msgArea.value == "") {
+        return
+    }
 
-//     if (!homeContent.classList.contains("d-none")) {
-//         homeContent.classList.add("d-none")
-//         homeContent.classList.remove("d-flex")
-//         divMessage.classList.remove("d-none")
-//     }
+    if (!homeContent.classList.contains("d-none")) {
+        homeContent.classList.add("d-none")
+        homeContent.classList.remove("d-flex")
+        divMessage.classList.remove("d-none")
+    }
 
-//     divMessage.appendChild(addMeMessage(msgArea.value))
-//     divMessage.appendChild(addChatGPTMessage())
-//     if (isGrout) {
-//         animateMsg(addGroutMessage())
-//     } else {
-//         animateMsg(getResponse(msgArea.value))
-//     }
-//     msgArea.value = ""
-// })
+    divMessage.appendChild(addMeMessage(msgArea.value))
+    divMessage.appendChild(addChatGPTMessage())
+    if (isGrout) {
+        animateMsg(addGroutMessage())
+    } else {
+        animateMsg(getResponse(msgArea.value))
+    }
+    msgArea.value = ""
+})

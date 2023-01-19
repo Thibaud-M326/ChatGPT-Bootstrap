@@ -6,6 +6,17 @@
     background-color: #444654;
 }
 
+#message {
+    margin-top: 56px;
+    overflow-y: auto;
+}
+
+@media (min-width: 768px) { 
+    #message {
+        margin-top: 0px;
+    }
+}
+
 .chatGpt-icons {
     width: 30px;
     height: 30px;
