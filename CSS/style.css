@@ -17,6 +17,10 @@
     animation: typing 6.05s steps(40, end);
 }
 
+#infoChatTop {
+    margin-top: 150px !important;
+}
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
