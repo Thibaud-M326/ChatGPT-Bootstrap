@@ -3,6 +3,8 @@ const divMessage = document.querySelector("#message")
 const msgArea = document.querySelector("#message-area")
 msgArea.value = ""
 
+isGrout = false
+
 indexMessageGPT = 0
 const templateMsg = [
     { msg: "Salut", response: "Bonjour" },
@@ -78,6 +80,29 @@ const addChatGPTMessage = () => {
     return divMessageChatGPT
 }
 
+const addGroutMessage = () => {
+    let message = "I am grout "
+    const iterationRandom = parseInt(Math.random() * 10)
+    for (i = 0; i <= iterationRandom; i++){
+        switch(parseInt((Math.random() * 10) / 2)) {
+            case 1 : message += "?" 
+            break
+
+            case 2 : message += "!" 
+            break
+
+            case 3 : message += "." 
+            break
+
+            case 4 : message += "?" 
+            break
+
+            case 5 : message += ";" 
+            break
+        }
+    }
+    return message
+}
 
 const animateMsg = (str) => {
     var spans = '<span>' + str.split('').join('</span><span>') + '</span>';
@@ -112,6 +137,10 @@ document.querySelector("#message-button").addEventListener("click", () => {
 
     divMessage.appendChild(addMeMessage(msgArea.value))
     divMessage.appendChild(addChatGPTMessage())
-    animateMsg(getResponse(msgArea.value))
+    if (isGrout) {
+        animateMsg(addGroutMessage())
+    } else {
+        animateMsg(getResponse(msgArea.value))
+    }
     msgArea.value = ""
 })
