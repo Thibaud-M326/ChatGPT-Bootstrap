@@ -1,10 +1,22 @@
-const homeContent = document.querySelector("#home-content")
-const divMessage = document.querySelector("#message")
-const msgArea = document.querySelector("#message-area")
-msgArea.value = ""
+// const homeContent = document.querySelector("#home-content")
+// const divMessage = document.querySelector("#message")
+// const msgArea = document.querySelector("#message-area")
+// msgArea.value = ""
 
 isGrout = false
 
+const grootCheckboxDesktop = document.querySelector("#grout-desktop")
+const grootCheckboxMobile = document.querySelector("#grout-mobile")
+
+grootCheckboxDesktop.addEventListener("change", () => {
+    isGrout = !isGrout
+    grootCheckboxMobile.checked = isGrout
+})
+
+grootCheckboxMobile.addEventListener("change", () => {
+    isGrout = !isGrout
+    grootCheckboxDesktop.checked = isGrout
+})
 indexMessageGPT = 0
 const templateMsg = [
     { msg: "Salut", response: "Bonjour" },
@@ -121,26 +133,26 @@ const animateMsg = (str) => {
 
 
 
-document.querySelector("#message-button").addEventListener("click", () => {
+// document.querySelector("#message-button").addEventListener("click", () => {
 
-    console.log("patrik")
+//     console.log("patrik")
 
-    if (msgArea.value == "") {
-        return
-    }
+//     if (msgArea.value == "") {
+//         return
+//     }
 
-    if (!homeContent.classList.contains("d-none")) {
-        homeContent.classList.add("d-none")
-        homeContent.classList.remove("d-flex")
-        divMessage.classList.remove("d-none")
-    }
+//     if (!homeContent.classList.contains("d-none")) {
+//         homeContent.classList.add("d-none")
+//         homeContent.classList.remove("d-flex")
+//         divMessage.classList.remove("d-none")
+//     }
 
-    divMessage.appendChild(addMeMessage(msgArea.value))
-    divMessage.appendChild(addChatGPTMessage())
-    if (isGrout) {
-        animateMsg(addGroutMessage())
-    } else {
-        animateMsg(getResponse(msgArea.value))
-    }
-    msgArea.value = ""
-})
+//     divMessage.appendChild(addMeMessage(msgArea.value))
+//     divMessage.appendChild(addChatGPTMessage())
+//     if (isGrout) {
+//         animateMsg(addGroutMessage())
+//     } else {
+//         animateMsg(getResponse(msgArea.value))
+//     }
+//     msgArea.value = ""
+// })
