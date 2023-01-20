@@ -3,10 +3,15 @@ const divMessage = document.querySelector("#message")
 const msgArea = document.querySelector("#message-area")
 msgArea.value = ""
 
-isGrout = false
 
 const grootCheckboxDesktop = document.querySelector("#grout-desktop")
 const grootCheckboxMobile = document.querySelector("#grout-mobile")
+
+
+isGrout = false
+
+grootCheckboxMobile.checked = isGrout
+grootCheckboxDesktop.checked = isGrout
 
 grootCheckboxDesktop.addEventListener("change", () => {
     isGrout = !isGrout
