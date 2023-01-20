@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="../CSS/ChatPage.css" />
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <title>NewChat</title>
+</head>
+
+<body>
+
+    <!-- Totalitée de l'ecran -->
+    <div class="d-flex" style="height: 100vh;">
+        <!-- Navbar Partie gauche -->
+        <div class="d-sm-none d-md-block">
+            <div class="d-flex flex flex-1 h-100">
+                <nav class="d-flex justify-content-between flex-column bg-black h-full w-100 flex-1 px-2 p-0 d-none d-sm-flex"
+                    style="min-width: 260px;" id="nav">
+                    <!-- bouton + NewChat -->
+                    <div class="d-flex w-full w-100">
+                        <button
+                            class="btn btn-outline-secondary d-flex t mt-2 p-2 border border-1 text-white rounded w-100 cursor-pointer border text-start col-md"
+                            style="background-color: #202123 !important">
+                            <i class="bi bi-plus pe-2"></i>
+                            New chat
+                        </button>
+                    </div>
+
+                    <!-- Bas de la navBar -->
+                    <div class="border-top flex-column">
+                        <div
+                            class="form-check form-switch border-0 gap-3 py-3 w-100 d-flex align-self-start rounded col-md ms-3">
+                            <input id="grout-desktop" type="checkbox">
+                            <label class="form-check-label text-white">Mode Groot</label>
+                        </div>
+                        <button
+                            class="btn btn-outline-secondary border-0 text-white gap-3 py-3 w-100 d-flex align-self-start rounded col-md">
+                            <i class="bi bi-sun ps-2"></i> Light mode
+                        </button>
+                        <button
+                            class="btn btn-outline-secondary border-0 text-white py-3 w-100 d-flex align-self-start rounded-md w-full col-md">
+                            <i class="bi bi-discord px-2"></i>OpenAI Discord
+                        </button>
+                        <button
+                            class="btn btn-outline-secondary border-0 text-white py-3 w-100 d-flex align-self-start rounded-md col-md">
+                            <i class="bi bi-box-arrow-up-right px-2"></i>Uppdate & FAQ
+                        </button>
+                        <button
+                            class="btn btn-outline-secondary border-0 text-white py-3 w-100 d-flex align-self-start rounded-md col-md">
+                            <i class="bi bi-box-arrow-right px-2"></i>Log out
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Partie droite de l'ecran -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">What ChatGPT can answer ?
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        -Salut<br>
+                        -Peux-tu te présenter ?<br>
+                        -Quelle est la plus grande montagne de France ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+        <div class="container-md" id="font-container">
+            <div class="row h-100" id="main">
+
+                <div class="col-md-0 col-lg-2"></div>
+
+                    <div class="d-flex flex-column justify-content-start" id="home-content" style="height: 87vh; width:100%; overflow-y: auto;"> 
+                        <h1 class="font-semibold text-light mt-3 mb-3 text-center p-md-4 mt-md-5">ChatGPT
+                            <button type="button" class="btn btn-outline-info " data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                i
+                            </button>
+                        </h1>
+
+
+                        <div class="bg-dark text-center" id="infoChatTop">
+                            <div class="row" id="main2"> <!-- le responsive est influencé par row -->
+                                <div class="text-light font-normal me-3 col-md"> <!-- le responsive est influencé par col-md -->
+                                    <h2 class="text-light font-normal h6 sm-3"><i class="bi bi-brightness-high"></i>
+                                        Example</h2>
+                                    <ul class="d-grid gap-2 p-0">
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">"Explain quantum computing
+                                            in simple terms"→</button>
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">"Got any creative ideas for
+                                            a 10 year old’s birthday?"→</button>
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">"How do I make an HTTP
+                                            request in Javascript?"→</button>
+                                    </ul>
+                                </div>
+
+                                <div class="text-light font-normal me-3 col-md"> <!-- le responsive est influencé par col-md -->
+                                    <h2 class="text-light font-normal h6 sm-3"><i class="bi bi-lightning-charge"></i>
+                                        Capabilities</h2>
+                                    <ul class="d-grid gap-2 p-0">
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">Remembers what user said
+                                            earlier in the conversation</button>
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">Allows user to provide
+                                            follow-up corrections</button>
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">Trained to decline
+                                            inappropriate requests</button>
+                                    </ul>
+                                </div>
+
+
+                                <div class="text-light font-normal me-3 col-md"> <!-- le responsive est influencé par col-md -->
+                                    <h2 class="text-light font-normal h6 sm-3"><i
+                                            class="bi bi-exclamation-triangle"></i> Limitation</h2>
+                                    <ul class="d-grid gap-2 p-0">
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">May occasionally generate
+                                            incorrect information</button>
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">May occasionally produce
+                                            harmful instructions or biased content</button>
+                                        <button class="p-2 rounded h6 btn btn-sm text-light">Limited knowledge of world
+                                            and events after 2021</button>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-0 col-lg-2"></div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-between h-100">
+
+                        <div class="d-none" id="message"></div>
+                        <div>
+                            <div class="col-md-0 col-lg-2"></div>
+                            <div class="bottom-0 border-top" id="footer">
+                                <div class="d-flex gap-3 align-items-center pt-2 mx-4 h4 ">
+                                    <div class="bg-primary p-1 rounded" id="user_icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                    <textarea class="form-control form-control-sm fs-6 p-0 border-0" rows="1"
+                                        style="resize: none; background-color: #40414F" ; id="message-area"> </textarea>
+                                    <button class="btn p-0" id="message-button"><i class="bi bi-arrow-right-square text-light"></i></button>
+                                </div>
+                                <div class="container text-secondary text-center word-wrap small h6 mx-3 pt-1 pb-2">
+                                    <a class="text-secondary text-center"
+                                        href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+                                        target="_blank">ChatGPT Jan 9 Version</a>
+                                    . Free Research Preview. Our goal is to make AI systems more natural and safe to
+                                    interact with. Your feedback will help us improve.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="col-md-0 col-lg-2"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- NavBar screen Large    -->
+    <nav class="navbar navbar-expand-lg fixed-top d-md-none" style="background-color: #343541;">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <i class="bi bi-list text-light"></i>
+        </button>
+        <a class="navbar-brand text-light" href="#">NewChat</a>
+        <i class="bi bi-plus-lg text-light"></i>
+
+        <div class="offcanvas offcanvas-start " style="width: 256px;" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header text-light" style="background-color: #202123;">
+                <button
+                    class="btn btn-outline-secondary d-flex t mt-2 p-2 me-2 border border-1 text-white rounded w-100 cursor-pointer border text-start col-md align-items-center"
+                    style="background-color: #202123 !important">
+                    <i class="bi bi-plus pe-2 mb-0 h3"></i>
+                    New chat
+                </button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body" style="background-color: #202123">
+                <div class="offcanvas-body" style="background-color: #202123;">
+                    <div class="border-top flex-column ">
+                        <div class="flex-column">
+                            <div
+                                class="form-check form-switch border-0 gap-3 py-3 w-100 d-flex align-self-start rounded col-md ms-3">
+                                <input id="grout-mobile" type="checkbox">
+                                <label class="form-check-label text-white">Mode Groot</label>
+                            </div>
+                            <button
+                                class="btn btn-outline-secondary border-0 text-white gap-3 py-3 w-100 d-flex align-self-start rounded col-md">
+                                <i class="bi bi-sun ps-2"></i> Light mode
+                            </button>
+                            <button
+                                class="btn btn-outline-secondary border-0 text-white py-3 w-100 d-flex align-self-start rounded-md w-full col-md">
+                                <i class="bi bi-discord px-2"></i>OpenAI Discord
+                            </button>
+                            <button
+                                class="btn btn-outline-secondary border-0 text-white py-3 w-100 d-flex align-self-start rounded-md col-md">
+                                <i class="bi bi-box-arrow-up-right px-2"></i>Uppdate & FAQ
+                            </button>
+                            <button
+                                class="btn btn-outline-secondary border-0 text-white py-3 w-100 d-flex align-self-start rounded-md col-md">
+                                <i class="bi bi-box-arrow-right px-2"></i>Log out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal 1 -->
+    <div class="modal fade text-white bg-white bg-opacity-10" data-bs-backdrop="static" id="myModal" aria-hidden="true"
+        aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark shadow-lg p-1">
+                <div class="p-3 ">
+                    <h2 class="modal-title fs-4 py-3 border-bottom border-secondary-subtle fw-bold"
+                        id="exampleModalToggleLabel1">ChatGPT</h2>
+                </div>
+                <div class="px-3 pt-2">
+                    <div class="form-group">
+                        <p class="fw-semibold fs-7">This is a free research preview.</p>
+                    </div>
+
+                    <div
+                        class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3" style="background-color: #212529 !important;">
+                        
+                        <img width="22" class="ms-2 me-4"
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/microscope_1f52c.png">
+                        <p class="m-auto">Our goal is to get external feedback in order to improve our systems and make
+                            them safer.</p>
+                    </div>
+
+                    <div
+                        class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3" style="background-color: #212529 !important;">
+                        <img width="22" class="ms-2 me-4"
+                            src="https://emojigraph.org/media/apple/police-car-light_1f6a8.png" />
+                        <p class="m-auto">While we have safeguards in place, the system may </br>occasionally generate
+                            incorrect or misleading information </br> and produce offensive or biasedcontent. It is not
+                            intended to give advice.</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end pb-5 pe-3 pt-1">
+                    <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle"
+                        id="p" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="background-color: #212529 !important;">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade text-white bg-white bg-opacity-10" data-bs-backdrop="static" id="exampleModalToggle2"
+        aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark shadow-lg p-1">
+                <div class="p-3 ">
+                    <h2 class="modal-title fs-4 py-3 border-bottom border-secondary-subtle fw-bold"
+                        id="exampleModalToggleLabel1">ChatGPT</h2>
+                </div>
+                <div class="px-3 pt-2">
+                    <div class="form-group">
+                        <p class="fw-semibold fs-7">How we collect data</p>
+                    </div>
+
+                    <div
+                        class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3" style="background-color: #212529 !important;">
+                        <img width="22" class="ms-2 me-4"
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/mechanical-arm_1f9be.png">
+                        <p class="m-auto">Conversations may be reviewed by our AI trainers to improve our systems.</p>
+                    </div>
+
+                    <div
+                        class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3" style="background-color: #212529 !important;">
+                        <img width="22" class="ms-2 me-4"
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/locked-with-key_1f510.png" />
+                        <p class="m-auto">Please don't share any sensitive information in your conversations.</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between pb-5 px-3 pt-1">
+                    <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle"
+                        id="p" data-bs-target="#myModal" data-bs-toggle="modal" style="background-color: #212529 !important;">Back</button>
+                    <button
+                        class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle ms-2"
+                        id="p" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" style="background-color: #212529 !important;">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade text-white bg-white bg-opacity-10" id="exampleModalToggle3" aria-hidden="true"
+        aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark shadow-lg p-1">
+                <div class="p-3 ">
+                    <h2 class="modal-title fs-4 py-3 border-bottom border-secondary-subtle fw-bold"
+                        id="exampleModalToggleLabel1">ChatGPT</h2>
+                </div>
+                <div class="px-3 pt-2">
+                    <div class="form-group">
+                        <p class="fw-semibold fs-7">We'd love you feedback!</p>
+                    </div>
+
+                    <div
+                        class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3" style="background-color: #212529 !important;">
+                        <img width="22" class="ms-2 me-4"
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/thumbs-up_1f44d.png">
+                        <p class="m-auto">This system is optimized for dialogue. Let us know if a particular response
+                            was good or unhelpful.</p>
+                    </div>
+
+                    <div
+                        class="form-group bg-dark-subtle border-0 rounded d-flex align-items-center justify-content-around p-3 mb-3" style="background-color: #212529 !important;">
+                        <img width="22" class="ms-2 me-4"
+                            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/325/speech-balloon_1f4ac.png" />
+                        <p class="m-auto ms-0">Share your feedback in our <a class="text-white fw-semibold"
+                                href="https://discord.com">Discord server.</a></p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between pb-5 px-3 pt-1">
+                    <button class="btn bg-dark-subtle text-white fw-semibold py-2 px-3 border border-secondary-subtle"
+                        id="p" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" style="background-color: #212529 !important;">Back</button>
+                    <button class="btn btn-success text-white fw-semibold py-2 px-3 border border-secondary-subtle"
+                        id="p" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Js -->
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="./../js/message.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#myModal").modal('show');
+            });
+        </script>
+    </div>
+
+</body>
+</html>

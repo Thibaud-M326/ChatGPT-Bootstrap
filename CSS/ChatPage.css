@@ -1,0 +1,34 @@
+@media only screen and (min-width: 768px) {
+    #footer {
+        border-style: none !important;
+    }
+
+    #user_icon {
+        display: none !important;
+    }
+}
+
+#nav {
+    background-color: #202123 !important;
+
+}
+
+#main2 {
+    background-color: #343541 !important;
+
+}
+
+.p-2 {
+    background-color: #3E3F4B !important;
+
+}
+
+body {
+    background-color: #343541;
+
+}
+
+.header-xs {
+    background-color: #343541 !important;
+
+}
