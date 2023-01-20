@@ -22,7 +22,7 @@
 
 <body>
 
-    <!-- Totalitée de l'ecran -->
+    <!-- +Totalitée de l'ecran -->
     <div class="d-flex" style="height: 100vh;">
         <!-- Navbar Partie gauche -->
         <div class="d-sm-none d-md-block">
@@ -68,24 +68,21 @@
         </div>
 
         <!-- Partie droite de l'ecran -->
+        <!-- modal info que peut dire chat Gpt -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content text-light" style="background-color: #212529 !important;">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">What ChatGPT can answer ?
-                        </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">What ChatGPT can answer ?</h1>
                     </div>
                     <div class="modal-body">
                         -Salut<br>
                         -Peux-tu te présenter ?<br>
                         -Quelle est la plus grande montagne de France ?
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -98,8 +95,8 @@
 
                 <div class="col-md-0 col-lg-2"></div>
 
-                    <div class="d-flex flex-column justify-content-start" id="home-content" style="height: 87vh; width:100%; overflow-y: auto;"> 
-                        <h1 class="font-semibold text-light mt-3 mb-3 text-center p-md-4 mt-md-5">ChatGPT
+                    <div class="d-flex flex-column justify-content-start col-md-12 col-lg-8" id="home-content" style="height: 87vh; width:100%; overflow-y: auto;"> 
+                        <h1 class="font-semibold text-light mt-3 mb-3 text-center p-md-4 mt-md-5 ChatGPTTitle">ChatGPT
                             <button type="button" class="btn btn-outline-info " data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 i
@@ -152,7 +149,8 @@
                         </div>
                         <div class="col-md-0 col-lg-2"></div>
                     </div>
-                    <div class="d-flex flex-column justify-content-between h-100">
+
+                    <div class="d-flex flex-column justify-content-between h-13">
 
                         <div class="d-none" id="message"></div>
                         <div>
@@ -162,7 +160,7 @@
                                     <div class="bg-primary p-1 rounded" id="user_icon">
                                         <i class="bi bi-person"></i>
                                     </div>
-                                    <textarea class="form-control form-control-sm fs-6 p-0 border-0" rows="1"
+                                    <textarea class="form-control form-control-sm fs-6 p-0 border-0 text-light" rows="1"
                                         style="resize: none; background-color: #40414F" ; id="message-area"> </textarea>
                                     <button class="btn p-0" id="message-button"><i class="bi bi-arrow-right-square text-light"></i></button>
                                 </div>
@@ -184,7 +182,7 @@
         </div>
     </div>
 
-    <!-- NavBar screen Large    -->
+    <!-- NavBar offScreen    -->
     <nav class="navbar navbar-expand-lg fixed-top d-md-none" style="background-color: #343541;">
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
